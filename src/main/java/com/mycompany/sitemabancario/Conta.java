@@ -20,12 +20,15 @@ public class Conta {
     public void sacar(double valor){
         
         if (valor <= 0){
+            System.out.println("Valor invalido!");
             return;
         }
         if (valor > saldo){
+            System.out.println("Saldo insuficiente!");
             return;
         }else{
-        saldo -= valor;
+            saldo -= valor;
+            System.out.println("Saque feito com sucesso!");
         }
     }
     
