@@ -17,20 +17,27 @@ public class Conta {
         }
         return saldo += valor;
     }
-    public double sacar(double valor){
+    public void sacar(double valor){
         
         if (valor <= 0){
-            System.out.println("Valor invalido!");
+            return;
         }
         if (valor > saldo){
-            System.out.println("Valor invalido!");
+            return;
+        }else{
+        saldo -= valor;
         }
-        return saldo -= valor;
     }
     
-    public void transferencia(double valor, Conta destino){
+    public boolean transferencia(double valor, Conta destino){
         this.sacar(valor);
-        destino.depositar(valor);
+        if(valor <= saldo){
+            destino.depositar(valor);
+            return true;
+        }else{
+            System.out.println("Operacao negada!");
+            return false;
+        }
     }
     
     public double getSaldo(){

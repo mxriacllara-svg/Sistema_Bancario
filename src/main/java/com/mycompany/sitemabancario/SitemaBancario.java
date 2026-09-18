@@ -16,21 +16,10 @@ public class SitemaBancario {
         
         conta1.depositar(100);
         conta2.sacar(35);
+        conta1.transferencia(1000, conta2);
         
-        cliente1.setTelefone("111111111");
-        
-        
-        
-        System.out.println(conta1.getNumero());
-        System.out.println(conta1.getTitular());
         System.out.println(conta1.getSaldo());
-        System.out.println(cliente1.getNome());
-        System.out.println(conta1.getTitular().getNome());
-        System.out.println(cliente1.getTelefone());
-        
-        cliente1.setNome("Maria Clara");
-        
-        System.out.println(cliente1.getNome());
+        System.out.println(conta2.getSaldo());
         
         
     }
